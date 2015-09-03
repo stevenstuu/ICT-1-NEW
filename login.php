@@ -1,7 +1,7 @@
 <?php
 $pw = "adminlogin" ;
     if ($_POST["loginPW"] == $pw){
-        header('Location: home.html');
+        header('Location: adminHome.html');
     }else{
          echo "password incorrect";
     }
