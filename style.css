@@ -30,7 +30,7 @@ body {
 		
 		#header {
             margin-left:700px;
-			position: fixed;
+			position: absolute;
 			text-align:right;
 			background-color:transparent;
 			color: #000;
@@ -38,14 +38,26 @@ body {
 		}
 
 .content {
-    padding-top: 500px;
+    padding-top: 100px;
+    padding-bottom: 150px;
 	font-size:16px;
 	display:block;
 	background-color:#FFF;
 	color:grey;
 	float:left;
 	text-align:justify;
-	width:800px;
+	width:900px;
+}
+.content2 {
+    padding-top: 500px;
+    padding-bottom: 150px;
+    font-size:16px;
+    display:block;
+    background-color:#FFF;
+    color:grey;
+    float:left;
+    text-align:justify;
+    width:800px;
 }
 
 

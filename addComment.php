@@ -1,3 +1,16 @@
+<?php
+
+$con=mysql_connect("localhost","root","admin");
+if(!$con){
+    die("Cannot connect:".mysql_error());
+}
+mysql_select_db("brandon",$con);
+
+$sql = "insert into comment(nameDB,emailDB,commentDB) VALUES ('$_POST[name]','$_POST[email]','$_POST[comment]')";
+$result=mysql_query($sql,$con);
+mysql_close($con);
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,12 +27,12 @@
     <div id="header">
         <nav>
             <ul>
-                <li><a href ="images.php">Gallery</a></li>
+                <li><a href ="gallery.html">Gallery</a></li>
                 <li><a href ="login.html" >Login</a></li>
             </ul>
         </nav>
     </div>
-<br/>
+    <br/>
     <?php
     $con=mysql_connect("localhost","root","admin");
     mysql_select_db("brandon",$con);
@@ -37,7 +50,6 @@
     <div class="content">
         <fieldset>
             <legend><h2>Comment</h2> </legend>
-            <br/>
             <?php
 
             //display comment
@@ -60,11 +72,6 @@
             mysql_close($con)
 
             ?>
-            <br/>
-            <br/>
-            <center><img src="images/Divider_for_Light.png"/></center>
-            <br/>
-            <br/>
             <form action="addComment.php" method="post">
                 <input type="text" placeholder="name" name="name" style="width: 180px;height: 20px;"/><br/><br/>
                 <input type="email" placeholder="email" name="email" style="width: 180px;height: 20px;"/><br/><br/>
